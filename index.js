@@ -16,7 +16,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-// nestedFunction has access to the variable internal because it is a nested function and has access to the scope of the parent function.
+// Because of closure, nestedFunction has access to the variable internal because it is a nested function and has access to the scope of the parent function.
 
 
 
@@ -75,9 +75,8 @@ const zooAnimals = [
   */
 
   function lowerCaseNames(array){
-    let newArray = [];
-    zooAnimals.map(function(zooAnimals) {
-      return newArray.push(zooAnimals.animal_name.toLowerCase());
+    let newArray = zooAnimals.map(function(zooAnimals) {
+      return (zooAnimals.animal_name.toLowerCase());
     });
     return newArray;
   }
@@ -105,7 +104,7 @@ const zooAnimals = [
 
   function USApop(array){
     let totalPop = zooAnimals.reduce(function(accumulator, item) {
-      return accumulator += item["population"];
+      return accumulator + item["population"];
     }, 0);
     return totalPop;
   }
